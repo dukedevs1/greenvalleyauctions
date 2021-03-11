@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerFacingMaster.master.cs" Inherits="GreenValleyAuctionsSystem.CustomerFacingMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Table ID="tblHeader" runat="server" Height="132px" Width="113px">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="/GVAImages/GVALogo_Gold.jpg" OnClick="imgBtnLogo_Click" Width="276px" Height="153px" />
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="LoginAware" runat="server" Text="Welcome, User!" Font-Bold="true"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <asp:Table ID="tblMenu" runat="server">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Button ID="btnRequestService" runat="server" Text="Request Service" OnClick="btnRequestService_Click" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="btnEvents" runat="server" Text="Events" OnClick="btnEvents_Click" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="btnContactUs" runat="server" Text="Contact Us" OnClick="btnContactUs_Click" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+            </asp:Table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
