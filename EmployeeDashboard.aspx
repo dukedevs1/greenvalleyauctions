@@ -8,7 +8,6 @@
             <asp:TableCell HorizontalAlign="Center">
                 <asp:Label ID="lblWelcometoDashboard" runat="server" Text="Welcome to the Employee Dashboard!" Font-Size="X-Large"></asp:Label>
                 <br />
-                <asp:Button ID="Button1" runat="server" Text="testButton" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -80,7 +79,7 @@
     </asp:Table>
 
 
-    <asp:Table ID="Table2" runat="server">
+   <%-- <asp:Table ID="Table2" runat="server">
         <asp:TableRow>
             <asp:TableCell >
                 <br />
@@ -108,7 +107,7 @@
             <asp:BoundField HeaderText="Auction Date" DataField="auctionDate" SortExpression="auctionDate" />
         </Columns>
 
-    </asp:GridView>
+    </asp:GridView>--%>
 
     <asp:SqlDataSource
         ID="datasrcServiceRequest"
@@ -119,9 +118,9 @@
         AS 'timebetween', SERVICEREQUEST.requestDescription, SERVICEREQUEST.requestSeen FROM SERVICEREQUEST 
         inner join CUSTOMER on SERVICEREQUEST.customerID = CUSTOMER.customerID;"></asp:SqlDataSource>
 
-    <asp:SqlDataSource
+   <%-- <asp:SqlDataSource
         ID="datasrcUpcomingAuctions"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:Lab4 %>"
-        SelectCommand="SELECT * FROM AUCTIONEVENT WHERE AUCTIONEVENT.auctionDate > GetDate()"></asp:SqlDataSource>
+        SelectCommand="SELECT * FROM AUCTIONEVENT WHERE AUCTIONEVENT.auctionDate > GetDate()"></asp:SqlDataSource>--%>
 </asp:Content>

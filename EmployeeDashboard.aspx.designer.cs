@@ -33,15 +33,6 @@ namespace GreenValleyAuctionsSystem
         protected global::System.Web.UI.WebControls.Label lblWelcometoDashboard;
 
         /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
         /// lblServiceRequests control.
         /// </summary>
         /// <remarks>
@@ -87,33 +78,6 @@ namespace GreenValleyAuctionsSystem
         protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// Table2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
-
-        /// <summary>
-        /// lblUpcomingAuctions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUpcomingAuctions;
-
-        /// <summary>
-        /// grdvwUpcomingAuctions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdvwUpcomingAuctions;
-
-        /// <summary>
         /// datasrcServiceRequest control.
         /// </summary>
         /// <remarks>
@@ -121,14 +85,5 @@ namespace GreenValleyAuctionsSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource datasrcServiceRequest;
-
-        /// <summary>
-        /// datasrcUpcomingAuctions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource datasrcUpcomingAuctions;
     }
 }
