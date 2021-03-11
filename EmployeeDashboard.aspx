@@ -8,6 +8,7 @@
             <asp:TableCell HorizontalAlign="Center">
                 <asp:Label ID="lblWelcometoDashboard" runat="server" Text="Welcome to the Employee Dashboard!" Font-Size="X-Large"></asp:Label>
                 <br />
+                <asp:Button ID="Button1" runat="server" Text="testButton" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
