@@ -1,0 +1,21 @@
+.green{color:#3C9479 ;}
+
+h1{padding-top:70px; text-align: center;  font-family: 'Josefin Sans', sans-serif;}
+h2{font-size: 40px; font-family: 'Josefin Sans', sans-serif;}
+h3{font-family: 'Josefin Sans', sans-serif;}
+a:hover{color:#E6C34D; font-family: 'Josefin Sans', sans-serif;}
+
+a{font-family: 'Josefin Sans', sans-serif;}
+
+body{background-color:  #F3F0E7   ; }
+
+.card{margin:15px;
+
+
+}
+//font-family: 'Crimson Text', serif;
+
+
+navbar{margin-bottom:50px;}
+
+main{margin-top: 60px;}
