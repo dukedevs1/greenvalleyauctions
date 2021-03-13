@@ -1,6 +1,6 @@
 .green{color:#1c593f ;}
 
-h1{padding-top:70px; text-align: center;  font-family: 'Josefin Sans', sans-serif;}
+h1{padding-top:70px; text-align: center;  font-family: 'Josefin Sans', sans-serif; color:#0b2218;}
 h2{font-size: 40px; font-family: 'Josefin Sans', sans-serif;}
 h3{font-family: 'Josefin Sans', sans-serif;}
 h4{font-family: 'Josefin Sans', sans-serif;}
@@ -25,11 +25,11 @@ body{background-color:#FDFDFB; }
 
 
 nav{margin-bottom:50px; }
-navcolor {background-color:#FFF3BB;}
+
 
 main{margin-top: 60px;}
 
-
+;
 @media (max-width:100px) {
     .display-4 {
         font-size: 1.5rem;
@@ -54,8 +54,10 @@ main{margin-top: 60px;}
     }
 }
 
+.calcustom{color:#fff2cc;}
 
+.row-custom{ background-color:#fff2cc;}
 footer{padding:50px;}
 
-
+.darkgreen{color:#0b2218;}
 container{padding: 50px;}
