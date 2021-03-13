@@ -1,13 +1,21 @@
-.green{color:#3C9479 ;}
+.green{color:#1c593f ;}
 
 h1{padding-top:70px; text-align: center;  font-family: 'Josefin Sans', sans-serif;}
 h2{font-size: 40px; font-family: 'Josefin Sans', sans-serif;}
 h3{font-family: 'Josefin Sans', sans-serif;}
-a:hover{color:#E6C34D; font-family: 'Josefin Sans', sans-serif;}
+h4{font-family: 'Josefin Sans', sans-serif;}
+h5{font-family: 'Josefin Sans', sans-serif;}
+a:hover{color:#0b2218; font-family: 'Josefin Sans', sans-serif;}
 
-a{font-family: 'Josefin Sans', sans-serif;}
+a{font-family: 'Josefin Sans', sans-serif; font-size: 20px;}
 
-body{background-color:  #F3F0E7   ; }
+.navbar-custom {
+    background-color: #fff2cc;
+}
+
+.btn-custom{background-color: #1c593f ;}
+
+body{background-color:#FDFDFB; }
 
 .card{margin:15px;
 
@@ -16,14 +24,38 @@ body{background-color:  #F3F0E7   ; }
 //font-family: 'Crimson Text', serif;
 
 
-navbar{margin-bottom:50px;}
+nav{margin-bottom:50px; }
+navcolor {background-color:#FFF3BB;}
 
 main{margin-top: 60px;}
 
 
+@media (max-width:100px) {
+    .display-4 {
+        font-size: 1.5rem;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    .day h5 {
+        background-color: #f8f9fa;
+        padding: 3px 5px 5px;
+        margin: -8px -8px 8px -8px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    .date {
+        padding-left: 4px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
 
-.progress{border:15px;}
+@media (max-width: 100px) {
+    .day {
+        height: 5.2857vw;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
 
-.space{margin:10px;}
+
+footer{padding:50px;}
 
 
+container{padding: 50px;}
