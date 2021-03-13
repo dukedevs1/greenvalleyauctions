@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Configuration;
+using System.Drawing;
 
 namespace GreenValleyAuctionsSystem
 {
@@ -51,5 +55,36 @@ namespace GreenValleyAuctionsSystem
                 Table3.Visible = false;
             }
         }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+            string saveNewCustomer = "";
+            saveNewCustomer = "INSERT INTO CUSTOMER(firstName, lastName, initialContact, discoveredFrom, emailAddress, streetAddress, city, state, zipcode, phoneNumber, phoneType) " +
+                "VALUES('" + txtbxFName.Text + "', '" + txtbxLName.Text + "', '" + txtbxMethodOfContact.Text + "', '" + txtbxHowTheyHeard.Text + "', '" + txtbxEmail.Text + "', '" +
+                txtbxCustomerStreet.Text + "', '" + txtbxCustomerCity.Text + "', '" +
+                txtbxCustomerState.Text + "', '" + txtbxCustomerZipCode.Text + "', '" + txtbxPhoneNumber.Text + "', '" + ddlPhoneType.SelectedValue.ToString() + "')";
+
+            //Define connection to database 
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab4"].ConnectionString);
+
+
+            //create sql command object which will send the query
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = saveNewCustomer;
+
+
+            //open connection
+            sqlConnect.Open();
+
+            //send query
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            //close connections
+            queryResults.Close();
+            sqlConnect.Close();
+        }
     }
 }
+

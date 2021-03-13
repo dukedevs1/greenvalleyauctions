@@ -24,7 +24,8 @@
                 <asp:Label ID="lblName" runat="server" Text="Customer Name:"></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:DropDownList ID="ddlCustomers" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCustomers" runat="server" DataSourceID="datasrcExistingCustomers" DataTextField="Customer Name" DataValueField="Customer Name" AutoPostBack="true">
+                </asp:DropDownList>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -77,6 +78,14 @@
     <asp:Table ID="Table2" runat="server" HorizontalAlign="Left" Visible="false">
         <asp:TableRow>
             <asp:TableCell>
+                <asp:Label ID="lblDeadline" runat="server" Text="Deadline Date: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="txtbxDeadlineDate" runat="server"></asp:TextBox>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
                 <asp:Label ID="lblReason" runat="server" Text="Reason for Selling: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
@@ -89,14 +98,6 @@
             </asp:TableCell>
             <asp:TableCell>
                 <asp:TextBox ID="txtbxNumberofItems" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="lblDeadline" runat="server" Text="Deadline Date: "></asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="txtbxDeadlineDate" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -147,6 +148,14 @@
     </asp:Table>
 
     <asp:Table ID="Table3" runat="server" HorizontalAlign="Right" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblMoveDeadlineDate" runat="server" Text="Deadline Date: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </asp:TableCell>
+        </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblCurrentStreet" runat="server" Text="Current Street Address: "></asp:Label>
@@ -213,4 +222,11 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+
+    <asp:SqlDataSource runat="server"
+        ID="datasrcExistingCustomers"
+        ConnectionString="<%$ ConnectionStrings: Lab4 %>"
+        SelectCommand="select firstName + ' ' + lastName as 'Customer Name' from CUSTOMER;"></asp:SqlDataSource>
 </asp:Content>
+
+

@@ -71,7 +71,8 @@
                 <asp:Label ID="lblMethodofContact" runat="server" Text="Method of Contact:"></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:DropDownList ID="ddlContactMethods" runat="server">
+                <asp:TextBox ID="txtbxMethodOfContact" runat="server"></asp:TextBox>
+                <%--<asp:DropDownList ID="ddlContactMethods" runat="server">
                     <asp:ListItem
                         Text="In Person"
                         Value="In Person">
@@ -88,7 +89,15 @@
                         Text="Email"
                         Value="Email">
                     </asp:ListItem>
-                </asp:DropDownList>
+                </asp:DropDownList>--%>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblHowTheyHeard" runat="server" Text="How did you hear about us?"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="txtbxHowTheyHeard" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -104,7 +113,7 @@
                 <asp:Label ID="lblCustomerCity" runat="server" Text="City: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:TextBox ID="txtbxCity" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtbxCustomerCity" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -148,6 +157,14 @@
     <asp:Table ID="Table2" runat="server" HorizontalAlign="Left" Visible="false">
         <asp:TableRow>
             <asp:TableCell>
+                <asp:Label ID="lblDeadline" runat="server" Text="Deadline Date: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="txtbxDeadlineDate" runat="server"></asp:TextBox>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
                 <asp:Label ID="lblReason" runat="server" Text="Reason for Selling: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
@@ -160,14 +177,6 @@
             </asp:TableCell>
             <asp:TableCell>
                 <asp:TextBox ID="txtbxNumberofItems" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="lblDeadline" runat="server" Text="Deadline Date: "></asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="txtbxDeadlineDate" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -218,6 +227,14 @@
     </asp:Table>
 
     <asp:Table ID="Table3" runat="server" HorizontalAlign="Right" Visible="false">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblMoveDeadlineDate" runat="server" Text="Deadline Date: "></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </asp:TableCell>
+        </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblCurrentStreet" runat="server" Text="Current Street Address: "></asp:Label>
@@ -284,4 +301,13 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+    <asp:Table ID="Table4" runat="server" HorizontalAlign="Center">
+        <asp:TableRow>
+            <asp:TableCell>
+                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
 </asp:Content>
+
+

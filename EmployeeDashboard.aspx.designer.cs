@@ -15,75 +15,66 @@ namespace GreenValleyAuctionsSystem
     {
 
         /// <summary>
-        /// tblWelcome control.
+        /// table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblWelcome;
+        protected global::System.Web.UI.WebControls.Table table1;
 
         /// <summary>
-        /// lblWelcometoDashboard control.
+        /// lblSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcometoDashboard;
+        protected global::System.Web.UI.WebControls.Label lblSearch;
 
         /// <summary>
-        /// lblServiceRequests control.
+        /// txtbxSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServiceRequests;
+        protected global::System.Web.UI.WebControls.TextBox txtbxSearch;
 
         /// <summary>
-        /// grdVwServiceRequest control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdVwServiceRequest;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// Table1 control.
+        /// grdvwServiceTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.GridView grdvwServiceTable;
 
         /// <summary>
-        /// lblSampleEmail control.
+        /// lblHelp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSampleEmail;
+        protected global::System.Web.UI.WebControls.Label lblHelp;
 
         /// <summary>
-        /// lblEmail control.
+        /// datasrcServiceTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
-
-        /// <summary>
-        /// datasrcServiceRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource datasrcServiceRequest;
+        protected global::System.Web.UI.WebControls.SqlDataSource datasrcServiceTable;
     }
 }

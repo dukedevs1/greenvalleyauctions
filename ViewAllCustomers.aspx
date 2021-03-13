@@ -13,14 +13,13 @@
                 <br />
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>
-    <asp:Table ID="Table2" runat="server" HorizontalAlign="right">
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="btnAddNew" runat="server" Text="Add New Customer" OnClick="btnAddNew_Click" />
+                <asp:Button ID="btnAddContact" runat="server" Text="Add Contact ->" OnClick="btnAddNew_Click" />
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+   
     <br />
     <br />
     <asp:GridView ID="grdvwCustomerTable"
@@ -42,7 +41,7 @@
             <asp:BoundField HeaderText="Last Name" DataField="lastName" SortExpression="lastName" ItemStyle-Width="150px" />
             <asp:BoundField HeaderText="Email Address" DataField="emailAddress" SortExpression="emailAddress" ItemStyle-Width="200px" />
             <asp:BoundField HeaderText="Phone Number" DataField="phoneNumber" SortExpression="phoneNumber" ItemStyle-Width="200px" />
-            <asp:BoundField HeaderText="Customer Address" DataField="address" SortExpression="address" ItemStyle-Width="200px" />
+            <asp:BoundField HeaderText="Customer Address" DataField="CustomerAddress" SortExpression="CustomerAddress" ItemStyle-Width="200px" />
             <asp:BoundField HeaderText="Initial Method of Contact" DataField="initialContact" SortExpression="initialContact" ItemStyle-Width="200px" />
             <asp:BoundField HeaderText="How did you hear about us?" DataField="discoveredFrom" SortExpression="discoveredFrom" ItemStyle-Width="200px" />
         </Columns>
@@ -52,9 +51,10 @@
         ID="datasrcCustomerTable"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:Lab4 %>"
-        SelectCommand="SELECT * FROM CUSTOMER"
+        SelectCommand="SELECT customerID, firstName, lastName, initialContact, discoveredFrom, 
+        emailAddress, streetAddress + ' ' + city + ', ' + state + ' ' + zipcode AS CustomerAddress, phoneNumber FROM CUSTOMER"
         UpdateCommand=" UPDATE CUSTOMER SET firstName = @firstName, lastName = @lastName, emailAddress = @emailAddress,
-        phoneNumber= @phoneNumber, address = @address, initialContact = @initialContact, discoveredFrom= @discoveredFrom WHERE customerID= @customerID"
+        phoneNumber= @phoneNumber, streetAddress=@streetAddress, city=@city, state=@state, zipcode=@zipcode, initialContact = @initialContact, discoveredFrom= @discoveredFrom WHERE customerID= @customerID"
         FilterExpression="firstName LIKE '%{0}%' OR lastName LIKE '%{0}%'">
         <FilterParameters>
             <asp:ControlParameter ControlID="txtbxSearch" Name="CustomerName"

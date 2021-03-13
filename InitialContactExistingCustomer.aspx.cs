@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Configuration;
+
 
 namespace GreenValleyAuctionsSystem
 {
@@ -45,7 +49,30 @@ namespace GreenValleyAuctionsSystem
         {
             if (cbxMove.Checked)
             {
+
                 Table3.Visible = true;
+
+                //string custAddressQuery = "SELECT address from CUSTOMER " +
+                //    "WHERE (firstName + ' ' + lastName) = " + ddlCustomers.SelectedValue.ToString() + ";";
+
+                ////Connect to database
+                //SqlConnection sqlConnect = new SqlConnection("server=localhost; Database=Lab4;Trusted_Connection=Yes;");
+
+                ////create sql comand and send query
+                //SqlCommand sqlCommand = new SqlCommand();
+                //sqlCommand.Connection = sqlConnect;
+                //sqlCommand.CommandType = CommandType.Text;
+                //sqlCommand.CommandText = custAddressQuery;
+
+                //sqlConnect.Open();
+                ////SqlDataReader queryResult = sqlCommand.ExecuteReader();
+                //string customerAddress = (string)sqlCommand.ExecuteScalar();
+
+                ////auto populating textbox with customer's address
+                //txtbxCurrentStreet.Text = customerAddress;
+
+                ////queryResult.Close();
+                //sqlConnect.Close();
             }
             else
             {
@@ -54,3 +81,5 @@ namespace GreenValleyAuctionsSystem
         }
     }
 }
+
+

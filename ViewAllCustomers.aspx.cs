@@ -21,7 +21,7 @@ namespace GreenValleyAuctionsSystem
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("InitialContactNewCustomer.aspx");
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
