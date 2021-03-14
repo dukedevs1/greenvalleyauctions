@@ -1,0 +1,140 @@
+﻿.green {
+    color: #1c593f;
+}
+
+h1 {
+    padding-top: 70px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: darkgreen;
+}
+
+h2 {
+    font-size: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h3 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h4 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h5 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a:hover {
+    color: #0b2218;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+.navbar-custom {
+    background-color: #fff2cc;
+}
+
+.btn-custom {
+    background-color: #1c593f;
+}
+
+button:active {
+    color: #0b2218;
+}
+
+body {
+    background-color: #FDFDFB;
+}
+
+.card {
+    margin: 15px;
+}
+
+//font-family: 'Crimson Text', serif;
+
+
+nav {
+    margin-bottom: 50px;
+}
+
+
+main {
+    margin-top: 60px;
+}
+
+;
+@media (max-width:100px) {
+    .display-4
+
+{
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.day h5 {
+    background-color: #f8f9fa;
+    padding: 3px 5px 5px;
+    margin: -8px -8px 8px -8px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.date {
+    padding-left: 4px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+}
+
+@media (max-width: 100px) {
+    .day {
+        height: 50.2857vw;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
+
+.calcustom {
+    color: #fff2cc;
+}
+
+.row-custom {
+    background-color: #fff2cc;
+}
+
+footer {
+    padding-top: 50px;
+}
+
+.darkgreen {
+    color: #0b2218;
+}
+
+container {
+    padding: 50px;
+}
+
+section {
+    padding: 40px;
+}
+
+
+.red {
+    color: #ff2129;
+}
+
+.blue {
+    color: #2066ac;
+}
+
+.lightgreen {
+    color: #1f9478;
+}

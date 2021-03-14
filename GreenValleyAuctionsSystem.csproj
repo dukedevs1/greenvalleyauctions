@@ -80,6 +80,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="EmployeeDashboard.aspx" />
     <Content Include="EmployeeLogin.aspx" />
+    <Content Include="EmployeeLogin2.aspx" />
     <Content Include="Examples.aspx" />
     <Content Include="InitialContactExistingCustomer.aspx" />
     <Content Include="InitialContactNewCustomer.aspx" />
@@ -186,6 +187,7 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="ServiceDetails.aspx" />
     <Content Include="StatusBar.aspx" />
+    <Content Include="styles.css" />
     <Content Include="ViewAllCustomers.aspx" />
     <Content Include="ViewInventory.aspx" />
     <Content Include="Web.config" />
@@ -232,6 +234,13 @@
     </Compile>
     <Compile Include="EmployeeLogin.aspx.designer.cs">
       <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLogin2.aspx.cs">
+      <DependentUpon>EmployeeLogin2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeLogin2.aspx.designer.cs">
+      <DependentUpon>EmployeeLogin2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Examples.aspx.cs">
       <DependentUpon>Examples.aspx</DependentUpon>
