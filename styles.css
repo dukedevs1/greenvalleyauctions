@@ -6,6 +6,7 @@ h3{font-family: 'Josefin Sans', sans-serif;}
 h4{font-family: 'Josefin Sans', sans-serif;}
 h5{font-family: 'Josefin Sans', sans-serif;}
 a:hover{color:#0b2218; font-family: 'Josefin Sans', sans-serif;}
+p{font-family: 'Josefin Sans', sans-serif;}
 
 a{font-family: 'Josefin Sans', sans-serif; font-size: 20px;}
 
@@ -57,9 +58,14 @@ main{margin-top: 60px;}
 .calcustom{color:#fff2cc;}
 
 .row-custom{ background-color:#fff2cc;}
-footer{padding:50px;}
+footer{padding-top:50px;}
 
 .darkgreen{color:#0b2218;}
 container{padding: 50px;}
 
 section{padding: 40px;}
+
+
+.red{color:#ff2129;}
+.blue{color:#2066ac;}
+.lightgreen{color:#1f9478;}
