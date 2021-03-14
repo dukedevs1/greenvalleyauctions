@@ -16,6 +16,8 @@ a{font-family: 'Josefin Sans', sans-serif; font-size: 20px;}
 
 .btn-custom{background-color: #1c593f ;}
 
+button:active{color:#0b2218;}
+
 body{background-color:#FDFDFB; }
 
 .card{margin:15px;
