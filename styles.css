@@ -49,7 +49,7 @@ main{margin-top: 60px;}
 
 @media (max-width: 100px) {
     .day {
-        height: 5.2857vw;
+        height: 50.2857vw;
         font-family: 'Josefin Sans', sans-serif;
     }
 }
@@ -61,3 +61,5 @@ footer{padding:50px;}
 
 .darkgreen{color:#0b2218;}
 container{padding: 50px;}
+
+section{padding: 40px;}

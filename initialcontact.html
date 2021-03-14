@@ -17,11 +17,35 @@
 	</head>
 
 	<body class="body">
-        <nav class="nav navbar navbar-expand-lg fixed-top shadow-sm navbar-custom" id="mainNav">
-              <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="empdashboard.html"><img src="images/header-logo.png"></a>
-            </div>
-        </nav>
+         <nav class="navbar navbar-expand-lg fixed-top shadow-sm navcolor navbar-custom" id="mainNav" >
+            <div class="container">
+
+        <a class="navbar-brand js-scroll-trigger" href="empdashboard.html"><img src="images/header-logo.png"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-success">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger green" href="emp.customers.html" >Customer Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger green" href="initialcontact.html">Initial Contact </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger green" href="employeecalendar.html">Calendar</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger green" href="">Manage Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger green" href="">Settings</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
 
 
 	<main class="container">
@@ -44,6 +68,88 @@
 
 
           </div>
+
+
+
+	<form class="container form col-xs-4">
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group md-form mb-0">
+        <label >First Name</label>
+        <input type="text" class="form-control shadow-sm imput-small" id="inputFirst Name" aria-describedby="text" placeholder="Customer First Name">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group mb-0">
+        <label>Last Name</label>
+        <input type="text" class="form-control shadow-sm"  placeholder="Customer Last Name">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group md-form mb-0">
+        <label>Address</label>
+        <input type="address" class="form-control shadow-sm imput-small" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Customer Address">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group mb-0">
+        <label >City</label>
+        <input type="text" class="form-control shadow-sm" id="exampleInputPassword1" placeholder="Input Customer City">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group mb-0">
+        <label>State</label>
+        <input type="text" class="form-control shadow-sm" id="exampleInputPassword1" placeholder="Input Customer State">
+        </div>
+    </div>
+</div>
+<div class="container row">
+    <div class="col-md-12">
+        <div class="form-group mb-0">
+        <label>Zip Code</label>
+        <input type="text" class="form-control shadow-sm" id="exampleInputPassword1" placeholder="Input Customer Zip Code">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div class="row justify-content-center"  style="text-align: center; padding:15px;">
+            <div class="col-sm">
+                        <a href="#" class="btn btn-custom text-white"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle text-white" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Auction</a>
+
+                        <a href="#" class="btn btn-custom text-white "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle text-white" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> Move</a>
+              </div>
+
+        </div>
+  </div>
+
+<div class="container" style="text-align: center;padding: 15px;">
+    <button type="submit" class="btn btn-primary btn-success shadow-sm btn-sm" style="text-align: center; " ><a href="empdashboard.html" class="text-white"> Submit Form</a></button>
+    </div>
+
+</div>
+
+</form>s
 
 	  </main><!-- /.container -->
 
