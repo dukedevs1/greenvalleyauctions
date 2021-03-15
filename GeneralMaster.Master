@@ -16,7 +16,7 @@
 		<link href="css/custom.css" rel="stylesheet" type="text/css">
           <link href="styles.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&display=swap" rel="stylesheet">
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
