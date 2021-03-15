@@ -348,24 +348,6 @@ namespace GreenValleyAuctionsSystem
         protected global::System.Web.UI.WebControls.TextBox txtbxReason;
 
         /// <summary>
-        /// lblNumberofItems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumberofItems;
-
-        /// <summary>
-        /// txtbxNumberofItems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbxNumberofItems;
-
-        /// <summary>
         /// lblItemName control.
         /// </summary>
         /// <remarks>
@@ -465,6 +447,51 @@ namespace GreenValleyAuctionsSystem
         protected global::System.Web.UI.WebControls.Button btnAnotherItem;
 
         /// <summary>
+        /// moreInvTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table moreInvTable;
+
+        /// <summary>
+        /// lblNumberofItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumberofItems;
+
+        /// <summary>
+        /// lblDisplayNumOfItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDisplayNumOfItems;
+
+        /// <summary>
+        /// lbInventory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbInventory;
+
+        /// <summary>
+        /// lblAddInventoryWarning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddInventoryWarning;
+
+        /// <summary>
         /// Table3 control.
         /// </summary>
         /// <remarks>
@@ -483,13 +510,13 @@ namespace GreenValleyAuctionsSystem
         protected global::System.Web.UI.WebControls.Label lblMoveDeadlineDate;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtbxMoveDeadlineDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtbxMoveDeadlineDate;
 
         /// <summary>
         /// lblCurrentStreet control.
@@ -652,5 +679,14 @@ namespace GreenValleyAuctionsSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// lblConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmation;
     }
 }

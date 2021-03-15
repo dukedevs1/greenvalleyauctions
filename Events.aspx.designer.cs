@@ -11,52 +11,43 @@ namespace GreenValleyAuctionsSystem
 {
 
 
-    public partial class EmployeeLogin
+    public partial class Events
     {
 
         /// <summary>
-        /// tbleUserLogin control.
+        /// tblEvents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tbleUserLogin;
+        protected global::System.Web.UI.WebControls.Table tblEvents;
 
         /// <summary>
-        /// txtUsername control.
+        /// lblHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.Label lblHeader;
 
         /// <summary>
-        /// txtUserPass control.
+        /// gvAuctionEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserPass;
+        protected global::System.Web.UI.WebControls.GridView gvAuctionEvent;
 
         /// <summary>
-        /// btnSignIn control.
+        /// srcAuctionEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignIn;
-
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.SqlDataSource srcAuctionEvent;
     }
 }

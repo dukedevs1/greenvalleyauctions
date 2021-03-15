@@ -81,7 +81,7 @@
                 <asp:Label ID="lblDeadline" runat="server" Text="Deadline Date: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:TextBox ID="txtbxDeadlineDate" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtbxDeadlineDate" runat="server" TextMode="Date"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -89,17 +89,10 @@
                 <asp:Label ID="lblReason" runat="server" Text="Reason for Selling: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:TextBox ID="txtbxReason" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtbxReason" runat="server" TextMode="MultiLine"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="lblNumberofItems" runat="server" Text="Number of Items:"></asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="txtbxNumberofItems" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
+       
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="lblItemName" runat="server" Text="Item Name: "></asp:Label>
@@ -142,7 +135,41 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="btnAnotherItem" runat="server" Text="Another Item?" OnClick="btnAnotherItem_Click" />
+                <asp:Button ID="btnAnotherItem" runat="server" Text="Add Item" OnClick="btnAnotherItem_Click" />
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+    <asp:Table runat="server" ID="moreInvTable" HorizontalAlign="Left" Visible="false">
+         <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblNumberofItems" runat="server" Text="Number of Items:"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblDisplayNumOfItems" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label
+                    runat="server"
+                    Text="Item Name"></asp:Label>
+                &nbsp
+                                &nbsp
+                                &nbsp
+                                &nbsp
+                               
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:ListBox
+                    ID="lbInventory"
+                    runat="server"></asp:ListBox>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblAddInventoryWarning" runat="server" Text=""></asp:Label>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
@@ -153,7 +180,7 @@
                 <asp:Label ID="lblMoveDeadlineDate" runat="server" Text="Deadline Date: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtbxMoveDeadlineDate" runat="server" TextMode="Date"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -222,11 +249,24 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-
+     <asp:Table ID="Table4" runat="server" HorizontalAlign="Center">
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Label ID="lblConfirmation" runat="server" Text="" Visible="false"></asp:Label>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
     <asp:SqlDataSource runat="server"
         ID="datasrcExistingCustomers"
         ConnectionString="<%$ ConnectionStrings: Lab4 %>"
         SelectCommand="select firstName + ' ' + lastName as 'Customer Name' from CUSTOMER;"></asp:SqlDataSource>
 </asp:Content>
+
+
 
 

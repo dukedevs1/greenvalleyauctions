@@ -18,7 +18,6 @@ namespace GreenValleyAuctionsSystem
             moreInvTable.Visible = false;
         }
 
-
         protected void btnSearch_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +26,10 @@ namespace GreenValleyAuctionsSystem
         protected void BtnPopulate_Click(object sender, EventArgs e)
         {
             txtComp.Text = "2021-02-02";
-            txtAddress.Text = "200 South Main Street Harrisonburg, VA 22801";
+            txtAddress.Text = "200 South Main Street";
+            txtCity.Text = "Harrisonburg";
+            txtState.Text = "VA";
+            txtZipCode.Text = "22801";
             txtTitle.Text = "Need to call back";
             txtNote.Text = "Customer asked for more details regarding prices.";
             txtTruck.Text = "Very Accessible";
@@ -38,6 +40,8 @@ namespace GreenValleyAuctionsSystem
             txtBoxType.Text = "Fragile";
             txtCrew.Text = "Ryan, Phil, and Karen";
             txtTime.Text = "7:00:00 AM";
+            txtAddItem.Text = "Display Case";
+            txtInvCost.Text = "500";
 
         }
         //method to clear all data from text boxes
@@ -55,6 +59,8 @@ namespace GreenValleyAuctionsSystem
             txtBoxType.Text = "";
             txtCrew.Text = "";
             txtTime.Text = "";
+            txtAddItem.Text = "";
+            txtInvCost.Text = "";
         }
 
         //method to display extra inventory elements 
@@ -84,124 +90,128 @@ namespace GreenValleyAuctionsSystem
             int numOfTrucks = int.Parse(HttpUtility.HtmlEncode(txtTrucks.Text));
             String trucksAssigned = HttpUtility.HtmlEncode(txtTrucksAssigned.Text);
 
-            try
+            //try
+            //{
+            System.Data.SqlClient.SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab4"].ConnectionString.ToString());
+            sc.Open();
+
+
+            System.Data.SqlClient.SqlCommand addServ = new System.Data.SqlClient.SqlCommand();
+            addServ.Connection = sc;
+            // INSERT Service RECORD
+            addServ.CommandText = "SET IDENTITY_INSERT dbo.SERVICE ON; " +
+                " INSERT INTO dbo.SERVICE (serviceID, serviceName, timeDate) VALUES(@serviceID, @serviceName, @timeDate)" +
+                " SET IDENTITY_INSERT dbo.SERVICE OFF;";
+            addServ.Parameters.Add(new SqlParameter("@serviceID", serviceID));
+            addServ.Parameters.Add(new SqlParameter("@serviceName", "Auction"));
+            addServ.Parameters.Add(new SqlParameter("@timeDate", timeDate));
+            addServ.ExecuteNonQuery();
+
+
+            System.Data.SqlClient.SqlCommand servTkt = new System.Data.SqlClient.SqlCommand();
+            servTkt.Connection = sc;
+            // INSERT ServiceTicket RECORD
+            servTkt.CommandText = "SET IDENTITY_INSERT dbo.SERVICETICKET ON; " +
+                                  " INSERT INTO dbo.SERVICETICKET(serviceTicketID, timeDate, serviceTicketCompletionDate, customerID, serviceID) VALUES(@serviceTicketID, @timeDate, @serviceTicketCompletionDate, @customerID, @serviceID)" +
+                                  " SET IDENTITY_INSERT dbo.SERVICETICKET OFF;";
+            servTkt.Parameters.Add(new SqlParameter("@serviceTicketID", serviceTicketID));
+            servTkt.Parameters.Add(new SqlParameter("@timeDate", timeDate));
+            servTkt.Parameters.Add(new SqlParameter("@serviceTicketCompletionDate", HttpUtility.HtmlEncode(txtComp.Text)));
+            servTkt.Parameters.Add(new SqlParameter("@customerID", ddlCustomer.SelectedValue));
+            servTkt.Parameters.Add(new SqlParameter("@serviceID", serviceID));
+            servTkt.ExecuteNonQuery();
+
+
+            System.Data.SqlClient.SqlCommand addAucServ = new System.Data.SqlClient.SqlCommand();
+            addAucServ.Connection = sc;
+            // INSERT MovingService RECORD
+            addAucServ.CommandText = "SET IDENTITY_INSERT dbo.AUCTIONSERVICE ON; " +
+                " INSERT INTO dbo.AUCTIONSERVICE (auctionServiceID, itemCost, itemSellCost, pickupStreetAddress, pickupCity, pickupState, pickupZipcode, truckAccessibility, neededSupplies, numBoxes, boxType, crew, numOfTrucks, trucksAssigned, serviceID) VALUES(@auctionServiceID, @itemCost, @itemSellCost, @pickupStreetAddress, @pickupCity, @pickupState, @pickupZipCode, @truckAccessibility, @neededSupplies, @numBoxes, @boxType, @crew, @numOfTrucks, @trucksAssigned, @serviceID)" +
+                 " SET IDENTITY_INSERT dbo.MOVINGSERVICE OFF;";
+            addAucServ.Parameters.Add(new SqlParameter("@auctionServiceID", auctionServiceID));
+            addAucServ.Parameters.Add(new SqlParameter("@itemCost", HttpUtility.HtmlEncode(txtInvCost.Text)));
+            addAucServ.Parameters.Add(new SqlParameter("@itemSellCost", "0"));
+            addAucServ.Parameters.Add(new SqlParameter("@pickupStreetAddress", HttpUtility.HtmlEncode(txtAddress.Text)));
+            addAucServ.Parameters.Add(new SqlParameter("@pickupCity", HttpUtility.HtmlEncode(txtCity.Text)));
+            addAucServ.Parameters.Add(new SqlParameter("@pickupState", HttpUtility.HtmlEncode(txtState.Text)));
+            addAucServ.Parameters.Add(new SqlParameter("@pickupZipCode", HttpUtility.HtmlEncode(txtZipCode.Text)));
+            addAucServ.Parameters.Add(new SqlParameter("@truckAccessibility", truckAccessibility));
+            addAucServ.Parameters.Add(new SqlParameter("@neededSupplies", neededSupplies));
+            addAucServ.Parameters.Add(new SqlParameter("@numBoxes", numBoxes));
+            addAucServ.Parameters.Add(new SqlParameter("@boxType", boxType));
+            addAucServ.Parameters.Add(new SqlParameter("@crew", crew));
+            addAucServ.Parameters.Add(new SqlParameter("@numOfTrucks", numOfTrucks));
+            addAucServ.Parameters.Add(new SqlParameter("@trucksAssigned", trucksAssigned));
+            addAucServ.Parameters.Add(new SqlParameter("@serviceID", serviceID));
+            addAucServ.ExecuteNonQuery();
+
+            System.Data.SqlClient.SqlCommand addWorkflow = new System.Data.SqlClient.SqlCommand();
+            addWorkflow.Connection = sc;
+            // INSERT INTO Workflow TABLE
+            addWorkflow.CommandText = "SET IDENTITY_INSERT dbo.WORKFLOW ON;" +
+                " INSERT INTO dbo.WORKFLOW (workflowID, ticketStatus, ticketChangeDate, employeeID, serviceID, ticketProgress) VALUES(@workflowID, @ticketStatus, @ticketChangeDate, @employeeID, @serviceID,  @ticketProgress)" +
+                " SET IDENTITY_INSERT dbo.WORKFLOW OFF;";
+            addWorkflow.Parameters.Add(new SqlParameter("@workflowID", workflowID));
+            addWorkflow.Parameters.Add(new SqlParameter("@ticketStatus", "Active"));
+            addWorkflow.Parameters.Add(new SqlParameter("@ticketChangeDate", ticketChangeDate));
+            addWorkflow.Parameters.Add(new SqlParameter("@employeeID", ddlEmpList.SelectedValue));
+            addWorkflow.Parameters.Add(new SqlParameter("@serviceID", serviceID));
+            addWorkflow.Parameters.Add(new SqlParameter("@ticketProgress", "In Progress"));
+            addWorkflow.ExecuteNonQuery();
+
+            System.Data.SqlClient.SqlCommand addNote = new System.Data.SqlClient.SqlCommand();
+            addNote.Connection = sc;
+            // INSERT INTO Workflow TABLE
+            addNote.CommandText = "SET IDENTITY_INSERT dbo.NOTE ON;" +
+                " INSERT INTO dbo.NOTE (noteID, noteTitle, noteBody, workflowID) VALUES(@noteID, @noteTitle, @noteBody, @workflowID)" +
+                " SET IDENTITY_INSERT dbo.NOTE OFF;";
+            addNote.Parameters.Add(new SqlParameter("@noteID", noteID));
+            addNote.Parameters.Add(new SqlParameter("@noteTitle", HttpUtility.HtmlEncode(txtTitle.Text)));
+            addNote.Parameters.Add(new SqlParameter("@noteBody", HttpUtility.HtmlEncode(txtNote.Text)));
+            addNote.Parameters.Add(new SqlParameter("@workflowID", workflowID));
+            addNote.ExecuteNonQuery();
+
+            System.Data.SqlClient.SqlCommand addEqipServ = new System.Data.SqlClient.SqlCommand();
+            addEqipServ.Connection = sc;
+            // INSERT Service RECORD
+            addEqipServ.CommandText = "SET IDENTITY_INSERT dbo.EQUIPMENTSERVICETICKET ON;" +
+                " INSERT INTO dbo.EQUIPMENTSERVICETICKET (equipmentServiceTicketID, serviceTicketID, equipmentID) VALUES(@equipmentServiceTicketID, @serviceTicketID, @equipmentID)" +
+                " SET IDENTITY_INSERT dbo.EQUIPMENTSERVICETICKET OFF;";
+            addEqipServ.Parameters.Add(new SqlParameter("@equipmentServiceTicketID", equipmentServiceTicketID));
+            addEqipServ.Parameters.Add(new SqlParameter("@serviceTicketID", serviceTicketID));
+            addEqipServ.Parameters.Add(new SqlParameter("@equipmentID", equipmentID));
+            addEqipServ.ExecuteNonQuery();
+
+            for (int i = 0; i < lbInventory.Items.Count; i++)
             {
-                System.Data.SqlClient.SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab4"].ConnectionString.ToString());
-                sc.Open();
-
-
-                System.Data.SqlClient.SqlCommand addServ = new System.Data.SqlClient.SqlCommand();
-                addServ.Connection = sc;
-                // INSERT Service RECORD
-                addServ.CommandText = "SET IDENTITY_INSERT dbo.SERVICE ON; " +
-                    " INSERT INTO dbo.SERVICE (serviceID, serviceName, timeDate) VALUES(@serviceID, @serviceName, @timeDate)" +
-                    " SET IDENTITY_INSERT dbo.SERVICE OFF;";
-                addServ.Parameters.Add(new SqlParameter("@serviceID", serviceID));
-                addServ.Parameters.Add(new SqlParameter("@serviceName", "Auction"));
-                addServ.Parameters.Add(new SqlParameter("@timeDate", timeDate));
-                addServ.ExecuteNonQuery();
-
-
-                System.Data.SqlClient.SqlCommand servTkt = new System.Data.SqlClient.SqlCommand();
-                servTkt.Connection = sc;
-                // INSERT ServiceTicket RECORD
-                servTkt.CommandText = "SET IDENTITY_INSERT dbo.SERVICETICKET ON; " +
-                                      " INSERT INTO dbo.SERVICETICKET(serviceTicketID, timeDate, serviceTicketCompletionDate, customerID, serviceID) VALUES(@serviceTicketID, @timeDate, @serviceTicketCompletionDate, @customerID, @serviceID)" +
-                                      " SET IDENTITY_INSERT dbo.SERVICETICKET OFF;";
-                servTkt.Parameters.Add(new SqlParameter("@serviceTicketID", serviceTicketID));
-                servTkt.Parameters.Add(new SqlParameter("@timeDate", timeDate));
-                servTkt.Parameters.Add(new SqlParameter("@serviceTicketCompletionDate", HttpUtility.HtmlEncode(txtComp.Text)));
-                servTkt.Parameters.Add(new SqlParameter("@customerID", ddlCustomer.SelectedValue));
-                servTkt.Parameters.Add(new SqlParameter("@serviceID", serviceID));
-                servTkt.ExecuteNonQuery();
-
-
-                System.Data.SqlClient.SqlCommand addAucServ = new System.Data.SqlClient.SqlCommand();
-                addAucServ.Connection = sc;
-                // INSERT MovingService RECORD
-                addAucServ.CommandText = "SET IDENTITY_INSERT dbo.AUCTIONSERVICE ON; " +
-                    " INSERT INTO dbo.AUCTIONSERVICE (auctionServiceID, itemCost, itemSellCost, pickupAddress, truckAccessibility, neededSupplies, numBoxes, boxType, crew, numOfTrucks, trucksAssigned, serviceID) VALUES(@auctionServiceID, @itemCost, @itemSellCost, @pickupAddress,@truckAccessibility, @neededSupplies, @numBoxes, @boxType, @crew, @numOfTrucks, @trucksAssigned, @serviceID)" +
-                     " SET IDENTITY_INSERT dbo.MOVINGSERVICE OFF;";
-                addAucServ.Parameters.Add(new SqlParameter("@auctionServiceID", auctionServiceID));
-                addAucServ.Parameters.Add(new SqlParameter("@itemCost", HttpUtility.HtmlEncode(txtInvCost.Text)));
-                addAucServ.Parameters.Add(new SqlParameter("@itemSellCost", "0"));
-                addAucServ.Parameters.Add(new SqlParameter("@pickupAddress", HttpUtility.HtmlEncode(txtAddress.Text)));
-                addAucServ.Parameters.Add(new SqlParameter("@truckAccessibility", truckAccessibility));
-                addAucServ.Parameters.Add(new SqlParameter("@neededSupplies", neededSupplies));
-                addAucServ.Parameters.Add(new SqlParameter("@numBoxes", numBoxes));
-                addAucServ.Parameters.Add(new SqlParameter("@boxType", boxType));
-                addAucServ.Parameters.Add(new SqlParameter("@crew", crew));
-                addAucServ.Parameters.Add(new SqlParameter("@numOfTrucks", numOfTrucks));
-                addAucServ.Parameters.Add(new SqlParameter("@trucksAssigned", trucksAssigned));
-                addAucServ.Parameters.Add(new SqlParameter("@serviceID", serviceID));
-                addAucServ.ExecuteNonQuery();
-
-                System.Data.SqlClient.SqlCommand addWorkflow = new System.Data.SqlClient.SqlCommand();
-                addWorkflow.Connection = sc;
-                // INSERT INTO Workflow TABLE
-                addWorkflow.CommandText = "SET IDENTITY_INSERT dbo.WORKFLOW ON;" +
-                    " INSERT INTO dbo.WORKFLOW (workflowID, ticketStatus, ticketChangeDate, employeeID, serviceID) VALUES(@workflowID, @ticketStatus, @ticketChangeDate, @employeeID, @serviceID)" +
-                    " SET IDENTITY_INSERT dbo.WORKFLOW OFF;";
-                addWorkflow.Parameters.Add(new SqlParameter("@workflowID", workflowID));
-                addWorkflow.Parameters.Add(new SqlParameter("@ticketStatus", "New Ticket"));
-                addWorkflow.Parameters.Add(new SqlParameter("@ticketChangeDate", ticketChangeDate));
-                addWorkflow.Parameters.Add(new SqlParameter("@employeeID", ddlEmpList.SelectedValue));
-                addWorkflow.Parameters.Add(new SqlParameter("@serviceID", serviceID));
-                addWorkflow.ExecuteNonQuery();
-
-                System.Data.SqlClient.SqlCommand addNote = new System.Data.SqlClient.SqlCommand();
-                addNote.Connection = sc;
-                // INSERT INTO Workflow TABLE
-                addNote.CommandText = "SET IDENTITY_INSERT dbo.NOTE ON;" +
-                    " INSERT INTO dbo.NOTE (noteID, noteTitle, noteBody, workflowID) VALUES(@noteID, @noteTitle, @noteBody, @workflowID)" +
-                    " SET IDENTITY_INSERT dbo.NOTE OFF;";
-                addNote.Parameters.Add(new SqlParameter("@noteID", noteID));
-                addNote.Parameters.Add(new SqlParameter("@noteTitle", HttpUtility.HtmlEncode(txtTitle.Text)));
-                addNote.Parameters.Add(new SqlParameter("@noteBody", HttpUtility.HtmlEncode(txtNote.Text)));
-                addNote.Parameters.Add(new SqlParameter("@workflowID", workflowID));
-                addNote.ExecuteNonQuery();
-
-                System.Data.SqlClient.SqlCommand addEqipServ = new System.Data.SqlClient.SqlCommand();
-                addEqipServ.Connection = sc;
-                // INSERT Service RECORD
-                addEqipServ.CommandText = "SET IDENTITY_INSERT dbo.EQUIPMENTSERVICETICKET ON;" +
-                    " INSERT INTO dbo.EQUIPMENTSERVICETICKET (equipmentServiceTicketID, serviceTicketID, equipmentID) VALUES(@equipmentServiceTicketID, @serviceTicketID, @equipmentID)" +
-                    " SET IDENTITY_INSERT dbo.EQUIPMENTSERVICETICKET OFF;";
-                addEqipServ.Parameters.Add(new SqlParameter("@equipmentServiceTicketID", equipmentServiceTicketID));
-                addEqipServ.Parameters.Add(new SqlParameter("@serviceTicketID", serviceTicketID));
-                addEqipServ.Parameters.Add(new SqlParameter("@equipmentID", equipmentID));
-                addEqipServ.ExecuteNonQuery();
-
-                for (int i = 0; i < lbInventory.Items.Count; i++)
+                if (lbInventory != null)
                 {
-                    if (lbInventory != null)
-                    {
-                        System.Data.SqlClient.SqlCommand addInv = new System.Data.SqlClient.SqlCommand();
-                        addInv.Connection = sc;
-                        // INSERT INTO Inventory
-                        String[] item = lbInventory.Items[i].ToString().Split(' ');
-                        String itemDesc = item[0];
-                        String itemCost = item[3];
-                        String inventoryID = GenerateID("SELECT MAX(dbo.INVENTORY.inventoryID) FROM dbo.INVENTORY");
-                        addInv.CommandText = "SET IDENTITY_INSERT dbo.INVENTORY ON;" +
-                            " INSERT INTO dbo.INVENTORY (inventoryID, inventoryDescription, inventoryCost, customerID) VALUES(@inventoryID, @inventoryDescription, @inventoryCost, @customerID)" +
-                            " SET IDENTITY_INSERT dbo.INVENTORY OFF;";
-                        addInv.Parameters.Add(new SqlParameter("@inventoryID", inventoryID));
-                        addInv.Parameters.Add(new SqlParameter("@inventoryDescription", HttpUtility.HtmlEncode(itemDesc)));
-                        addInv.Parameters.Add(new SqlParameter("@inventoryCost", HttpUtility.HtmlEncode(itemCost)));
-                        addInv.Parameters.Add(new SqlParameter("@customerID", ddlCustomer.SelectedValue));
-                        addInv.ExecuteNonQuery();
+                    System.Data.SqlClient.SqlCommand addInv = new System.Data.SqlClient.SqlCommand();
+                    addInv.Connection = sc;
+                    // INSERT INTO Inventory
+                    String[] item = lbInventory.Items[i].ToString().Split(' ');
+                    String itemDesc = item[0];
+                    String itemCost = item[3];
+                    String inventoryID = GenerateID("SELECT MAX(dbo.INVENTORY.inventoryID) FROM dbo.INVENTORY");
+                    addInv.CommandText = "SET IDENTITY_INSERT dbo.INVENTORY ON;" +
+                        " INSERT INTO dbo.INVENTORY (inventoryID, inventoryDescription, inventoryCost, customerID) VALUES(@inventoryID, @inventoryDescription, @inventoryCost, @customerID)" +
+                        " SET IDENTITY_INSERT dbo.INVENTORY OFF;";
+                    addInv.Parameters.Add(new SqlParameter("@inventoryID", inventoryID));
+                    addInv.Parameters.Add(new SqlParameter("@inventoryDescription", HttpUtility.HtmlEncode(itemDesc)));
+                    addInv.Parameters.Add(new SqlParameter("@inventoryCost", HttpUtility.HtmlEncode(itemCost)));
+                    addInv.Parameters.Add(new SqlParameter("@customerID", ddlCustomer.SelectedValue));
+                    addInv.ExecuteNonQuery();
 
-                    }
                 }
-                lblNotify.Text = "Auction Service Ticket and Inventory has been added!";
             }
-
-            catch
-            {
-                lblNotify.Text = "Error - Please try again.";
-            }
+            lblNotify.Text = "Auction Service Ticket and Inventory has been added!";
         }
+
+        //catch
+        //{
+        //    lblNotify.Text = "Error - Please try again.";
+        //}
+
 
         //generate id 
         protected String GenerateID(String sqlQuery)
@@ -310,5 +320,3 @@ namespace GreenValleyAuctionsSystem
         }
     }
 }
-
-

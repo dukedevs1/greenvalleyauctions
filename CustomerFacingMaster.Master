@@ -14,12 +14,12 @@
             <asp:Table ID="tblHeader" runat="server" Height="132px" Width="113px">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="/GVAImages/GVALogo_Gold.jpg" OnClick="imgBtnLogo_Click" Width="276px" Height="153px" />
+                        <asp:ImageButton ID="imgBtnLogo" runat="server" ImageUrl="/GVAImages/GVALogo_Gold.jpg"  OnClick="imgBtnLogo_Click" Width="276px" Height="153px" />
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="LoginAware" runat="server" Text="Welcome, User!" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="LoginAware" runat="server" Text="Welcome, User" Font-Bold="true"></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>

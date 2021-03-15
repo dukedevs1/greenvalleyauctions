@@ -628,56 +628,56 @@ namespace GreenValleyAuctionsSystem
         }
         private void InsertRecords(StringCollection sc)
         {
-            StringBuilder sb = new StringBuilder(string.Empty);
-            string[] splitItems = null;
-            const string sqlStatement = "INSERT INTO ROOMS (roomName, floorLevel, boxes, notes) VALUES";
-            foreach (string item in sc)
-            {
-                if (item.Contains(","))
-                {
-                    splitItems = item.Split(",".ToCharArray());
-                    sb.AppendFormat("{0}('{1}','{2}','{3}','{4}'); ", sqlStatement, splitItems[0], splitItems[1], splitItems[2], splitItems[3]);
-                }
-            }
+            //    StringBuilder sb = new StringBuilder(string.Empty);
+            //    string[] splitItems = null;
+            //    const string sqlStatement = "INSERT INTO ROOMS (roomName, floorLevel, boxes, notes) VALUES";
+            //    foreach (string item in sc)
+            //    {
+            //        if (item.Contains(","))
+            //        {
+            //            splitItems = item.Split(",".ToCharArray());
+            //            sb.AppendFormat("{0}('{1}','{2}','{3}','{4}'); ", sqlStatement, splitItems[0], splitItems[1], splitItems[2], splitItems[3]);
+            //        }
+            //    }
 
-            using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab4"].ConnectionString))
-            {
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand(sb.ToString(), connection))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            lblMessage.Text = "Records successfully saved!";
+            //    using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab4"].ConnectionString))
+            //    {
+            //        connection.Open();
+            //        using (SqlCommand cmd = new SqlCommand(sb.ToString(), connection))
+            //        {
+            //            cmd.CommandType = CommandType.Text;
+            //            cmd.ExecuteNonQuery();
+            //        }
+            //    }
+            //    lblMessage.Text = "Records successfully saved!";
         }
 
         protected void BtnSave_Click(object sender, EventArgs e)
         {
-            int rowIndex = 0;
-            StringCollection sc = new StringCollection();
-            if (ViewState["CurrentTable"] != null)
-            {
-                DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
-                if (dtCurrentTable.Rows.Count > 0)
-                {
-                    for (int i = 1; i <= dtCurrentTable.Rows.Count; i++)
-                    {
-                        //extract the TextBox values  
-                        TextBox box1 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[1].FindControl("Names");
-                        TextBox box2 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[2].FindControl("Floor");
-                        TextBox box3 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[3].FindControl("Boxes");
-                        TextBox box4 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[4].FindControl("Notes");
+            //int rowIndex = 0;
+            //StringCollection sc = new StringCollection();
+            //if (ViewState["CurrentTable"] != null)
+            //{
+            //    DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
+            //    if (dtCurrentTable.Rows.Count > 0)
+            //    {
+            //        for (int i = 1; i <= dtCurrentTable.Rows.Count; i++)
+            //        {
+            //            //extract the TextBox values  
+            //            TextBox box1 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[1].FindControl("Names");
+            //            TextBox box2 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[2].FindControl("Floor");
+            //            TextBox box3 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[3].FindControl("Boxes");
+            //            TextBox box4 = (TextBox)grdvwRooms.Rows[rowIndex].Cells[4].FindControl("Notes");
 
-                        //get the values from TextBox and DropDownList  
-                        //then add it to the collections with a comma "," as the delimited values  
-                        sc.Add(string.Format("{0},{1},{2},{3}", box1.Text, box2.Text, box3.Text, box4.Text));
-                        rowIndex++;
-                    }
-                    //Call the method for executing inserts  
-                    InsertRecords(sc);
-                }
-            }
+            //            //get the values from TextBox and DropDownList  
+            //            //then add it to the collections with a comma "," as the delimited values  
+            //            sc.Add(string.Format("{0},{1},{2},{3}", box1.Text, box2.Text, box3.Text, box4.Text));
+            //            rowIndex++;
+            //        }
+            //        //Call the method for executing inserts  
+            //        InsertRecords(sc);
+            //    }
+            //}
         }
     }
 

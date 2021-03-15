@@ -2,20 +2,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
+    <br />
+    
+
+         <div class="container row center" >  
+       
+             <div >
+
+                  <h1>Employee Login</h1>
     <asp:Table ID="tbleUserLogin" runat="server" CssClass="center" >
-                <asp:TableRow>
+                <%--<asp:TableRow>
                     <asp:TableCell>
                         <asp:Label 
                             ID="lblLogin" 
                             runat="server" 
                             Text="Employee Login" Font-Bold="true"></asp:Label>                 
                     </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
+                </asp:TableRow>--%>
+               <%-- <asp:TableRow>
                     <asp:TableCell>
                          <asp:Image ID="imgLoginIcon" runat ="server" ImageUrl="/GVAImages/GVALogo_Gold.jpg" Width="138px" Height="77px" />  
                     </asp:TableCell>
-                </asp:TableRow>
+                </asp:TableRow>--%>
                 <asp:TableRow>
                     <asp:TableCell>
                         <asp:TextBox 
@@ -39,7 +50,7 @@
                             ID="btnSignIn" 
                             runat="server" 
                             Text="Login" 
-                            OnClick="btnSignIn_Click" />
+                            OnClick="btnSignIn_Click" class="btn btn-primary btn-success shadow-sm"  />
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -52,5 +63,7 @@
                 </asp:TableRow>
             </asp:Table>
 
+                    </div>
+            </div>
 
 </asp:Content>

@@ -60,7 +60,9 @@ body {
     margin: 15px;
 }
 
-//font-family: 'Crimson Text', serif;
+.center {
+    margin:auto;
+}
 
 
 nav {

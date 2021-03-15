@@ -11,52 +11,70 @@ namespace GreenValleyAuctionsSystem
 {
 
 
-    public partial class EmployeeLogin
+    public partial class ServiceRequest
     {
 
         /// <summary>
-        /// tbleUserLogin control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tbleUserLogin;
+        protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
-        /// txtUsername control.
+        /// lblServiceRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.Label lblServiceRequest;
 
         /// <summary>
-        /// txtUserPass control.
+        /// lblServiceType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserPass;
+        protected global::System.Web.UI.WebControls.Label lblServiceType;
 
         /// <summary>
-        /// btnSignIn control.
+        /// ddlServiceType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignIn;
+        protected global::System.Web.UI.WebControls.DropDownList ddlServiceType;
 
         /// <summary>
-        /// lblStatus control.
+        /// lblRequestDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Label lblRequestDescription;
+
+        /// <summary>
+        /// txtRequestDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRequestDescription;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

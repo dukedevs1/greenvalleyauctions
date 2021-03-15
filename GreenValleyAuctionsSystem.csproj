@@ -72,15 +72,20 @@
   <ItemGroup>
     <Content Include="AuctionPickUpForm.aspx" />
     <Content Include="AuctionSchedulingForm.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CustomerLogin.aspx" />
+    <Content Include="CustomerPortal.aspx" />
+    <Content Include="CustomerSignUp.aspx" />
     <Content Include="EmployeeDashboard.aspx" />
     <Content Include="EmployeeLogin.aspx" />
     <Content Include="EmployeeLogin2.aspx" />
+    <Content Include="Events.aspx" />
     <Content Include="Examples.aspx" />
     <Content Include="InitialContactExistingCustomer.aspx" />
     <Content Include="InitialContactNewCustomer.aspx" />
@@ -186,6 +191,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="ServiceDetails.aspx" />
+    <Content Include="ServiceRequest.aspx" />
     <Content Include="StatusBar.aspx" />
     <Content Include="styles.css" />
     <Content Include="ViewAllCustomers.aspx" />
@@ -207,12 +213,40 @@
     <Compile Include="AuctionSchedulingForm.aspx.designer.cs">
       <DependentUpon>AuctionSchedulingForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerFacingMaster.Master.cs">
       <DependentUpon>CustomerFacingMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomerFacingMaster.Master.designer.cs">
       <DependentUpon>CustomerFacingMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLogin.aspx.cs">
+      <DependentUpon>CustomerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerLogin.aspx.designer.cs">
+      <DependentUpon>CustomerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPortal.aspx.cs">
+      <DependentUpon>CustomerPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPortal.aspx.designer.cs">
+      <DependentUpon>CustomerPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerSignUp.aspx.cs">
+      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerSignUp.aspx.designer.cs">
+      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDashboard.aspx.cs">
       <DependentUpon>EmployeeDashboard.aspx</DependentUpon>
@@ -241,6 +275,13 @@
     </Compile>
     <Compile Include="EmployeeLogin2.aspx.designer.cs">
       <DependentUpon>EmployeeLogin2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Examples.aspx.cs">
       <DependentUpon>Examples.aspx</DependentUpon>
@@ -292,6 +333,13 @@
     </Compile>
     <Compile Include="ServiceDetails.aspx.designer.cs">
       <DependentUpon>ServiceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.designer.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="StatusBar.aspx.cs">
       <DependentUpon>StatusBar.aspx</DependentUpon>

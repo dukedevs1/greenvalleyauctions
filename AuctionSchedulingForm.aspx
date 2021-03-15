@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-                <asp:Label ID="lblTitle" runat="server" Text="Auction Scheduling Form"></asp:Label>
+
+            <asp:Label ID="lblTitle" runat="server" Text="Auction Scheduling Form"></asp:Label>
             <section id="section">
            <asp:TableRow ID="search">
             <asp:TableCell>
@@ -21,11 +22,13 @@
         AllowSorting="true"
         AllowPaging="true"
         AutoGenerateColumns="false"
+        AutoGenerateEditButton="true"
         DataKeyNames="serviceID"
         GridLines="Horizontal"
         EmptyDataText="No services in database associated with that customer."
         AlternatingRowStyle-BackColor="LightGray" CellPadding="5" HeaderStyle-HorizontalAlign="Left" HeaderStyle-BackColor="#266141"
-        HeaderStyle-ForeColor="White">
+        HeaderStyle-ForeColor="White"
+        CausesValidation="false">
         <Columns>
             <asp:BoundField HeaderText="CustomerID" DataField="customerID" SortExpression="customerID" ItemStyle-Width="150px" Visible="false" ReadOnly="true"/>
             <asp:BoundField HeaderText="First Name" DataField="firstName" SortExpression="firstName" ItemStyle-Width="150px" />
@@ -362,7 +365,7 @@
                         <asp:Label 
                             ID="lblAddress"
                             runat="server" 
-                            Text="Pickup Address: "></asp:Label>
+                            Text="Pickup Street Address: "></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox 
@@ -373,6 +376,65 @@
                                 runat="server" 
                                 ErrorMessage="RequiredFieldValidator" 
                                 ControlToValidate="txtAddress" 
+                                SetFocusOnError="true"
+                                Text="* Required Field" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
+                    </asp:TableCell>
+                          <asp:TableCell>
+                        <asp:Label 
+                            ID="lblCity"
+                            runat="server" 
+                            Text="Pickup City: "></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox 
+                            ID="txtCity" 
+                            runat="server" ></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator8"
+                                runat="server" 
+                                ErrorMessage="RequiredFieldValidator" 
+                                ControlToValidate="txtCity" 
+                                SetFocusOnError="true"
+                                Text="* Required Field" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label 
+                            ID="lblState"
+                            runat="server" 
+                            Text="Pickup State: "></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox 
+                            ID="txtState" 
+                            runat="server" ></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator9"
+                                runat="server" 
+                                ErrorMessage="RequiredFieldValidator" 
+                                ControlToValidate="txtState" 
+                                SetFocusOnError="true"
+                                Text="* Required Field" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
+                    </asp:TableCell>
+                          <asp:TableCell>
+                        <asp:Label 
+                            ID="lblZipCode"
+                            runat="server" 
+                            Text="Pickup ZipCode: "></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox 
+                            ID="txtZipCode" 
+                            runat="server" ></asp:TextBox>
+                            <asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator10"
+                                runat="server" 
+                                ErrorMessage="RequiredFieldValidator" 
+                                ControlToValidate="txtZipCode" 
                                 SetFocusOnError="true"
                                 Text="* Required Field" 
                                 ForeColor="Red"></asp:RequiredFieldValidator>
@@ -484,7 +546,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
-             
+   
 
 
              <asp:SqlDataSource
@@ -526,6 +588,8 @@
              ID="calendarDates"
              ConnectionString="<%$ ConnectionStrings:Lab4 %>"
              SelectCommand="select dbo.SERVICE.timeDate from dbo.SERVICE where dbo.SERVICE.serviceName = 'Auction'"></asp:SqlDataSource>
+
+
 
 
 </asp:Content>
